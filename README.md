@@ -3,7 +3,7 @@
 [![crates.io](https://img.shields.io/crates/v/rig-redis-vectorstore.svg)](https://crates.io/crates/rig-redis-vectorstore)
 [![docs.rs](https://img.shields.io/docsrs/rig-redis-vectorstore)](https://docs.rs/rig-redis-vectorstore)
 [![CI](https://github.com/daric93/rig-redis-vectorstore/actions/workflows/ci.yaml/badge.svg)](https://github.com/daric93/rig-redis-vectorstore/actions/workflows/ci.yaml)
-[![license](https://img.shields.io/crates/l/rig-redis-vectorstore.svg)](./LICENSE)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 Redis ([RediSearch](https://redis.io/docs/latest/develop/ai/search-and-query/)) vector store integration for the [Rig](https://crates.io/crates/rig-core) LLM framework.
 
