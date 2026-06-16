@@ -7,6 +7,7 @@ license = "MIT"
 readme = "README.md"
 description = "Redis (RediSearch) vector store integration for the Rig LLM framework"
 repository = "https://github.com/daric93/rig-redis-vectorstore"
+documentation = "https://docs.rs/rig-redis-vectorstore"
 keywords = ["rig", "redis", "redisearch", "vector", "llm"]
 categories = ["database", "science"]
 

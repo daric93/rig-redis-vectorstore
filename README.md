@@ -1,5 +1,10 @@
 # rig-redis-vectorstore
 
+[![crates.io](https://img.shields.io/crates/v/rig-redis-vectorstore.svg)](https://crates.io/crates/rig-redis-vectorstore)
+[![docs.rs](https://img.shields.io/docsrs/rig-redis-vectorstore)](https://docs.rs/rig-redis-vectorstore)
+[![CI](https://github.com/daric93/rig-redis-vectorstore/actions/workflows/ci.yaml/badge.svg)](https://github.com/daric93/rig-redis-vectorstore/actions/workflows/ci.yaml)
+[![license](https://img.shields.io/crates/l/rig-redis-vectorstore.svg)](./LICENSE)
+
 Redis ([RediSearch](https://redis.io/docs/latest/develop/ai/search-and-query/)) vector store integration for the [Rig](https://crates.io/crates/rig-core) LLM framework.
 
 `rig-redis-vectorstore` provides a `RedisVectorStore` that implements Rig's
@@ -11,6 +16,18 @@ metadata filtering.
 > lives here as an independent, community-maintained crate. It depends on `rig-core`
 > from crates.io. It is published as `rig-redis-vectorstore` because the bare
 > `rig-redis` name on crates.io is an unrelated placeholder.
+
+## Features
+
+- KNN vector similarity search via RediSearch (`top_n` and `top_n_ids`).
+- Configurable distance metric: COSINE (default), L2, and inner product.
+- Metadata filtering with a typed, injection-safe `Filter` builder (tag, numeric
+  range, full-text, phrase, AND/OR/NOT), plus a `raw` escape hatch.
+- Automatic extraction of document fields into filterable hash fields
+  (`with_metadata_fields`).
+- Index helpers: `create_index` and `validate_index` (checks metric + prefix).
+- Document deletion by key (`delete`).
+- Works over RESP2 and RESP3; embedding-model-agnostic; WASM-compatible bounds.
 
 ## Installation
 
@@ -119,6 +136,15 @@ REDIS_URL=redis://127.0.0.1:6379 cargo test --test integration_tests -- --ignore
 Integration tests skip gracefully when neither `REDIS_URL` nor Docker/Podman is
 available.
 
+## Contributing
+
+Contributions are welcome. Please **open an issue before sending a pull request**,
+sign off your commits (`git commit -s`, per the DCO), and make sure the checks pass.
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for the full guide (development setup,
+running tests, and the PR checklist).
+
 ## License
 
-Licensed under the [MIT License](./LICENSE).
+Licensed under the [MIT License](./LICENSE). By contributing you agree that your
+contributions are licensed under the same MIT terms (see
+[CONTRIBUTING.md](./CONTRIBUTING.md)).
