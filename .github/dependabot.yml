@@ -7,6 +7,10 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
+    # Only change the version requirement when the new release is outside the
+    # current range (e.g. a new rig-core minor like 0.39); leave in-range patch
+    # releases alone to avoid churn.
+    versioning-strategy: "increase-if-necessary"
     groups:
       cargo-minor-patch:
         update-types:
