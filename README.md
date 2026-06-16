@@ -1,6 +1,6 @@
 # rig-redis-vectorstore
 
-[![crates.io](https://img.shields.io/crates/v/rig-redis-vectorstore.svg)](https://crates.io/crates/rig-redis-vectorstore)
+[![crates.io](https://img.shields.io/crates/v/rig-redis-vectorstore)](https://crates.io/crates/rig-redis-vectorstore)
 [![docs.rs](https://img.shields.io/docsrs/rig-redis-vectorstore)](https://docs.rs/rig-redis-vectorstore)
 [![CI](https://github.com/daric93/rig-redis-vectorstore/actions/workflows/ci.yaml/badge.svg)](https://github.com/daric93/rig-redis-vectorstore/actions/workflows/ci.yaml)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
