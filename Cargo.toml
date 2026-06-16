@@ -1,0 +1,44 @@
+[package]
+name = "rig-redis-vectorstore"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT"
+readme = "README.md"
+description = "Redis (RediSearch) vector store integration for the Rig LLM framework"
+repository = "https://github.com/daric93/rig-redis-vectorstore"
+keywords = ["rig", "redis", "redisearch", "vector", "llm"]
+categories = ["database", "science"]
+
+# Self-contained lints (no workspace inheritance).
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+all = "warn"
+
+[dependencies]
+rig-core = { version = ">=0.38.1, <0.39.0", default-features = false }
+redis = { version = "1.2.1", default-features = false, features = ["tokio-comp", "connection-manager"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing = "0.1"
+uuid = { version = "1", features = ["v4"] }
+
+[dev-dependencies]
+rig-core = { version = ">=0.38.1, <0.39.0", features = ["derive"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+anyhow = "1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+testcontainers = "0.27"
+
+[[example]]
+name = "vector_search_redis"
+required-features = ["rig-core/derive"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+# Empty table: detach this crate from any parent Cargo workspace so it builds standalone.
+[workspace]
